@@ -9,7 +9,7 @@ module.exports = async function () {
     };
 
     const graph = await createGraphInterface(credentials, {
-        authenticationProvider: createDesktopMiddleware({ refreshTokenPath: '.gphauth' })
+        authenticationProvider: createDesktopMiddleware({ refreshTokenPath: '.gphauth', personal: process.env.PERSONAL })
     });
 
     return graph;

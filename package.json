@@ -7,16 +7,21 @@
     "mailer": "bin"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "node build.js",
+    "build-docs": "node build-docs.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "graph-interface": "^0.1.11",
-    "graph-interface-desktop-provider": "^0.1.5",
+    "graph-interface-desktop-provider": "^0.1.6",
     "marked": "^1.1.1",
     "yargs": "^15.4.1"
   },
   "description": "Microsoft Graph API client that send emails on behalf of a user by a CLI interface",
   "repository": "https://github.com/Giancarl021/Graph-Mailer.git",
-  "author": "Giancarlo Fontela da Luz <gian.f.luz@hotmail.com>"
+  "author": "Giancarlo Fontela da Luz <gian.f.luz@hotmail.com>",
+  "devDependencies": {
+    "nexe": "^3.3.7"
+  }
 }

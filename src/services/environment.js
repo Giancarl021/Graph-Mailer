@@ -2,7 +2,9 @@ const dotenv = require('dotenv');
 const createDirectoryHandler = require('../util/directory');
 
 module.exports = function () {
-    const dir = [];
+    const dir = [
+        '.gphauth'
+    ];
 
     function build() {
         dotenv.config();
