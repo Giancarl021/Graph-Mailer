@@ -1,9 +1,11 @@
+const dotenv = require('dotenv');
 const createDirectoryHandler = require('../util/directory');
 
 module.exports = function () {
     const dir = [];
 
     function build() {
+        dotenv.config();
         dir.forEach(path => createDirectoryHandler(path).make(true));
     }
 

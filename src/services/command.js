@@ -1,5 +1,5 @@
 const commands = {
-    
+    send: require('../commands/send'),
 };
 
 const helper = require('../commands/help');

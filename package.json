@@ -13,6 +13,7 @@
     "dotenv": "^8.2.0",
     "graph-interface": "^0.1.11",
     "graph-interface-desktop-provider": "^0.1.5",
+    "marked": "^1.1.1",
     "yargs": "^15.4.1"
   },
   "description": "Microsoft Graph API client that send emails on behalf of a user by a CLI interface",
