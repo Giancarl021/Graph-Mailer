@@ -1,0 +1,21 @@
+{
+  "name": "graph-mailer",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "mailer": "bin"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "graph-interface": "^0.1.11",
+    "graph-interface-desktop-provider": "^0.1.5",
+    "yargs": "^15.4.1"
+  },
+  "description": "Microsoft Graph API client that send emails on behalf of a user by a CLI interface",
+  "repository": "https://github.com/Giancarl021/Graph-Mailer.git",
+  "author": "Giancarlo Fontela da Luz <gian.f.luz@hotmail.com>"
+}
