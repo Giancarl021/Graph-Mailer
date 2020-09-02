@@ -1,1 +1,13 @@
-{}
+{
+    "send": {
+        "description": "Send an email",
+        "args": ["<destination[,destination[,...]]>", "<subject>", "<body or @from:path/to/file>"],
+        "flags": {
+            "t": {
+                "alias": "type",
+                "description": "The type of the body",
+                "value": "text | html | md"
+            }
+        }
+    }
+}
