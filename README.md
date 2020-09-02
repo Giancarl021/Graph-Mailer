@@ -25,16 +25,7 @@ The permissions needed in the Graph instance are:
 * ``User.Read`` (Delegated)
 * ``Mail.Send`` (Delegated)
 
-Then you need to fill a ``.env`` file on the root of the project with the values:
-
-```env
-TENANT_ID="..."
-CLIENT_ID="..."
-CLIENT_SECRET="..."
-PERSONAL=true
-```
-
-The ``PERSONAL`` value **must** be true if you want to use accounts like ``foo@hotmail.com``.
+Then you need to add the credentials of your instance with the ``credentials set`` command.
 
 ## Authentication
 
