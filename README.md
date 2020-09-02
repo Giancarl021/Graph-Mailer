@@ -2,7 +2,7 @@
 
 Microsoft Graph API client that send emails on behalf of a user by a CLI interface
 
-### Installation
+## Installation
 
 npm:
 
@@ -16,7 +16,7 @@ yarn:
 yarn add global graph-mailer
 ```
 
-### Connection with a Microsoft Graph Instance
+## Connection with a Microsoft Graph Instance
 
 To this app work as expected, you need to provide a connection with a [Graph API](https://docs.microsoft.com/en/graph/use-the-api) from your [Azure Tenant](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant).
 
@@ -36,11 +36,11 @@ PERSONAL=true
 
 The ``PERSONAL`` value **must** be true if you want to use accounts like ``foo@hotmail.com``.
 
-### Authentication
+## Authentication
 
 After all the environment variables are configured, when you first execute the project, a oAuth2 window will be popped up, for the first authentication and authorization. After that you will not need to sign in again.
 
-### Commands
+## Commands
 
 [//]: # (^)
 
