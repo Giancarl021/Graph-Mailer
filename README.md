@@ -40,6 +40,8 @@ The ``PERSONAL`` value **must** be true if you want to use accounts like ``foo@h
 
 After all the environment variables are configured, when you first execute the project, a oAuth2 window will be popped up, for the first authentication and authorization. After that you will not need to sign in again.
 
+### Commands
+
 [//]: # (^)
 
 ### send ``<destination[,destination[,...]]>`` ``<subject>`` ``<body or @from:path/to/file>``
