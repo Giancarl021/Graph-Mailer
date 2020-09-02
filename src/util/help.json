@@ -17,5 +17,13 @@
                 "value": "<email>"
             }
         }
+    },
+    "credentials": {
+        "description": "Manage the credentials to Graph API",
+        "operations": {
+            "get": {},
+            "set": {},
+            "remove": {}
+        }
     }
 }

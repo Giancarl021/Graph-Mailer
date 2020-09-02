@@ -49,10 +49,10 @@ const operations = {
 
         const data = file.load();
 
-        return `Tenant ID: ${data.tenantId}` +
-            `Client ID: ${data.clientId}` +
-            `Client Secret: ${data.clientSecret}` +
-            `Account Type: ${data.personal ? 'Personal': 'Organizational'}`;
+        return `Tenant ID: ${data.tenantId}\n` +
+            `Client ID: ${data.clientId}\n` +
+            `Client Secret: ${data.clientSecret}\n` +
+            `Account Type: ${data.personal ? 'Personal': 'Organizational'}\n`;
     },
 
     remove(_, flags) {
@@ -72,6 +72,8 @@ const operations = {
         }
 
         file.remove();
+
+        return 'Credentials removed';
     }
 };
 
