@@ -11,6 +11,8 @@ module.exports = async function (args, flags) {
     const [ to, subject, body ] = args;
 
     let type = String(flags.type || flags.t || 'text').toLowerCase();
+    const cc = parseList(flags.cc || '', validateEmail, 'cc');
+    const bcc = parseList(flags.bcc || '', validateEmail, 'bcc');
 
     if(!to) {
         throw new Error('The argument "to" is required');
@@ -33,16 +35,17 @@ module.exports = async function (args, flags) {
         type = 'html';
     }
 
-    await sendMail(subject, type, content, parseList(to));
+    await sendMail(subject, type, content, parseList(to, validateEmail, 'to'), cc, bcc);
     return 'E-mail sent';
 }
 
-function parseList(string) {
+function parseList(string, validator = () => true, name = '') {
+    if(!string) return [];
     const s = string
         .split(',')
         .map(e => e.trim());
-    if(s.some(e => !validateEmail(e))) {
-        throw new Error('Invalid e-mail(s)');
+    if(s.some(e => !validator(e))) {
+        throw new Error('Invalid parameter(s)' + (name ? ` in parameter "${name}"` : ''));
     }
 
     return s;
@@ -50,7 +53,7 @@ function parseList(string) {
 
 function parseFrom(string) {
     if(string.startsWith('@from:')) {
-        const file = createFileHandler(string.replace('@from:', ''));
+        const file = createFileHandler(string.replace('@from:', ''), true);
         if(!file.exists()) {
             throw new Error(`File "${file.path}" does not exists`);
         }

@@ -1,14 +1,15 @@
 const locate = require('./locate');
 const fs = require('fs');
 
-function File(path) {
-    const _path = locate(path);
+function File(path, useCWD = false) {
+    const _path = locate(path, useCWD);
 
     function save(data) {
         fs.writeFileSync(_path, data);
     }
 
-    function load() {
+    function load(buffer = false) {
+        if(buffer) return fs.readFileSync(_path);
         return fs.readFileSync(_path, 'utf8');
     }
 
@@ -17,7 +18,7 @@ function File(path) {
     }
 
     function exists() {
-        return fs.existsSync(_path);
+        return fs.existsSync(_path) && fs.lstatSync(_path).isFile();
     }
 
     function copy(dest) {

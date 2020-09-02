@@ -1,7 +1,14 @@
 const getGraph = require('../util/graph');
 
-module.exports = async function (subject, bodyType, content, recipients) {
+module.exports = async function (subject, bodyType, content, to, cc, bcc) {
     const graph = await getGraph();
+
+    const toRecipient = to => ({
+        emailAddress: {
+            address: to
+        }
+    });
+
     await graph.unit('me/sendMail', {
         method: 'POST',
         body: {
@@ -11,11 +18,9 @@ module.exports = async function (subject, bodyType, content, recipients) {
                     contentType: bodyType,
                     content
                 },
-                toRecipients: recipients.map(to => ({
-                    emailAddress: {
-                        address: to
-                    }
-                }))
+                toRecipients: to.map(toRecipient),
+                ccRecipients: cc.map(toRecipient),
+                bccRecipients: bcc.map(toRecipient)
             }
         }
     });
