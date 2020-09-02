@@ -1,4 +1,5 @@
 .gphauth/
+data/
 # Logs
 logs
 *.log

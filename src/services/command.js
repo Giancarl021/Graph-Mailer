@@ -1,5 +1,6 @@
 const commands = {
     send: require('../commands/send'),
+    credentials: require('../commands/credentials'),
 };
 
 const helper = require('../commands/help');

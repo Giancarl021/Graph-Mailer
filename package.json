@@ -12,11 +12,11 @@
     "build-docs": "node build-docs.js"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
     "graph-interface": "^0.1.11",
     "graph-interface-desktop-provider": "^0.1.6",
     "marked": "^1.1.1",
     "mime-types": "^2.1.27",
+    "readline-sync": "^1.4.10",
     "yargs": "^15.4.1"
   },
   "description": "Microsoft Graph API client that send emails on behalf of a user by a CLI interface",
