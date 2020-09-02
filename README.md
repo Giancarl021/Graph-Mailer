@@ -25,7 +25,7 @@ The permissions needed in the Graph instance are:
 * ``User.Read`` (Delegated)
 * ``Mail.Send`` (Delegated)
 
-Then you need to fill a ``.env`` file with the values:
+Then you need to fill a ``.env`` file on the root of the project with the values:
 
 ```env
 TENANT_ID="..."
