@@ -7,6 +7,14 @@
                 "alias": "type",
                 "description": "The type of the body",
                 "value": "text | html | md"
+            },
+            "cc": {
+                "description": "Carbon-Copy email addresses",
+                "value": "<email>"
+            },
+            "bcc": {
+                "description": "Blinded Carbon-Copy email addresses",
+                "value": "<email>"
             }
         }
     }

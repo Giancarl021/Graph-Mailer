@@ -50,6 +50,10 @@ Send an email
 **Flags:**
 * ``-t | --type``: The type of the body.  
 *Value:* ``text | html | md``.
+* ``--cc``: Carbon-Copy email addresses.  
+*Value:* ``<email>``.
+* ``--bcc``: Blinded Carbon-Copy email addresses.  
+*Value:* ``<email>``.
 
 
 
