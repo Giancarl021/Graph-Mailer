@@ -21,9 +21,45 @@
     "credentials": {
         "description": "Manage the credentials to Graph API",
         "operations": {
-            "get": {},
-            "set": {},
-            "remove": {}
+            "get": "Returns the credentials saved",
+            "set": {
+                "description": "Save credentials",
+                "flags": {
+                    "t": {
+                        "alias": "tenant-id",
+                        "description": "The Tenant ID of the graph instance"
+                    },
+                    "c": {
+                        "alias": "client-id",
+                        "description": "The Client ID of the graph instance"
+                    },
+                    "s": {
+                        "alias": "client-secret",
+                        "description": "The Client Secret of the graph instance"
+                    },
+                    "f": {
+                        "alias": "force",
+                        "description": "Overwrite if existent without asking"
+                    },
+                    "p": {
+                        "alias": "personal",
+                        "description": "The credentials to be saved aim personal accounts"
+                    },
+                    "no-p": {
+                        "alias": "no-personal",
+                        "description": "The credentials to be saved aim organizational accounts"
+                    }
+                }
+            },
+            "remove": {
+                "description": "Remove current credentials",
+                "flags": {
+                    "f": {
+                        "alias": "force",
+                        "description": "Force remove without asking"
+                    }
+                }
+            }
         }
     }
 }

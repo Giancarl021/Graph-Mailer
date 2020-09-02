@@ -56,5 +56,31 @@ Send an email
 *Value:* ``<email>``.
 
 
+### credentials 
+Manage the credentials to Graph API
+
+**Operations:**
+
+#### get 
+Returns the credentials saved
+#### set 
+Save credentials
+
+**Flags:**
+* ``-t | --tenant-id``: The Tenant ID of the graph instance
+* ``-c | --client-id``: The Client ID of the graph instance
+* ``-s | --client-secret``: The Client Secret of the graph instance
+* ``-f | --force``: Overwrite if existent without asking
+* ``-p | --personal``: The credentials to be saved aim personal accounts
+* ``--no-p | --no-personal``: The credentials to be saved aim organizational accounts
+
+
+#### remove 
+Remove current credentials
+
+**Flags:**
+* ``-f | --force``: Force remove without asking
+
+
 
 [//]: # ($)
