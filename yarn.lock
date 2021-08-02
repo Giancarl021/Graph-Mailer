@@ -1120,19 +1120,19 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.2:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-graph-interface-desktop-provider@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/graph-interface-desktop-provider/-/graph-interface-desktop-provider-0.1.6.tgz#37ac472159add1ed9cef0b3542414d48d594778b"
-  integrity sha512-bzB4vK4z2olV04PGj3QWgQoLPHgCFPjpiFq0AYxjbnSacglELNlhSIAGqpYk2O3+RD8ROmTPe5zXykDu+z2zIA==
+graph-interface-desktop-provider@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/graph-interface-desktop-provider/-/graph-interface-desktop-provider-0.1.7.tgz#8f9c8d8477c1ab6caf546f9c0d1ae5b0e8630ebe"
+  integrity sha512-urcDQf0hZAsclk38tg8q9jUHC71ebZMy1qtpx1t3AdF+U5wdFO/4gaZ/wDkx0ViDwB2ogxKCyb3AZ9wXGSDjTw==
   dependencies:
     client-oauth2 "^4.3.2"
     open "^7.1.0"
     request "^2.88.2"
 
-graph-interface@^0.1.11:
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/graph-interface/-/graph-interface-0.1.11.tgz#6c076b8409ca4010f6b6c03ae36a16953746dffd"
-  integrity sha512-+EtBW7splJJATCn7gqBvQPJAdgPpwUIJJhiBJNsu0CcrADebsQ7V3uovS+2VxPQn+gSDn8fIrTrfkvCJOiyYzw==
+graph-interface@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/graph-interface/-/graph-interface-0.1.12.tgz#d57213af5fe5a66c41af9d6c4516b0ac9296fe18"
+  integrity sha512-DAhZH5Pn8vb7BadF380VhXYELSl+SLAj9889jX0NKe38rlK0SE8K6jUXj6NR70z41x3bq+nX/+TK9wxQ+RD6zQ==
   dependencies:
     redis "^3.0.2"
     request "^2.88.2"
