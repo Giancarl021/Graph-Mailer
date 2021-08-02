@@ -1,6 +1,6 @@
 {
   "name": "graph-mailer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -12,8 +12,8 @@
     "build-docs": "node build-docs.js"
   },
   "dependencies": {
-    "graph-interface": "^0.1.11",
-    "graph-interface-desktop-provider": "^0.1.6",
+    "graph-interface": "^0.1.12",
+    "graph-interface-desktop-provider": "^0.1.7",
     "marked": "^1.1.1",
     "mime-types": "^2.1.27",
     "readline-sync": "^1.4.10",
