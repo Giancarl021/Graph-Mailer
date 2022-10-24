@@ -1,6 +1,6 @@
 # Graph-Mailer
 
-Microsoft Graph API client that send emails on behalf of a user by a CLI interface
+Microsoft Graph API client that send emails on behalf of a user using a CLI
 
 ## Installation
 
@@ -22,10 +22,10 @@ To this app work as expected, you need to provide a connection with a [Graph API
 
 The permissions needed in the Graph instance are:
 
-* ``User.Read`` (Delegated)
-* ``Mail.Send`` (Delegated)
+-   `User.Read` (Delegated)
+-   `Mail.Send` (Delegated)
 
-Then you need to add the credentials of your instance with the ``credentials set`` command.
+Then you need to add the credentials of your instance with the `credentials set` command.
 
 ## Authentication
 
@@ -33,45 +33,50 @@ After all the environment variables are configured, when you first execute the p
 
 ## Commands
 
-[//]: # (^)
+[//]: # '^'
 
-### send ``<destination[,destination[,...]]>`` ``<subject>`` ``<body or @from:path/to/file>``
+### send `<destination[,destination[,...]]>` `<subject>` `<body or @from:path/to/file>`
+
 Send an email
 
 **Flags:**
-* ``-t | --type``: The type of the body.  
-*Value:* ``text | html | md``.
-* ``--cc``: Carbon-Copy email addresses.  
-*Value:* ``<email>``.
-* ``--bcc``: Blinded Carbon-Copy email addresses.  
-*Value:* ``<email>``.
 
+-   `-t | --type`: The type of the body.  
+    _Value:_ `text | html | md`.
+-   `--cc`: Carbon-Copy email addresses.  
+    _Value:_ `<email>`.
+-   `--bcc`: Blinded Carbon-Copy email addresses.  
+    _Value:_ `<email>`.
 
-### credentials 
+### credentials
+
 Manage the credentials to Graph API
 
 **Operations:**
 
-#### get 
+#### get
+
 Returns the credentials saved
-#### set 
+
+#### set
+
 Save credentials
 
 **Flags:**
-* ``-t | --tenant-id``: The Tenant ID of the graph instance
-* ``-c | --client-id``: The Client ID of the graph instance
-* ``-s | --client-secret``: The Client Secret of the graph instance
-* ``-f | --force``: Overwrite if existent without asking
-* ``-p | --personal``: The credentials to be saved aim personal accounts
-* ``--no-p | --no-personal``: The credentials to be saved aim organizational accounts
 
+-   `-t | --tenant-id`: The Tenant ID of the graph instance
+-   `-c | --client-id`: The Client ID of the graph instance
+-   `-s | --client-secret`: The Client Secret of the graph instance
+-   `-f | --force`: Overwrite if existent without asking
+-   `-p | --personal`: The credentials to be saved aim personal accounts
+-   `--no-p | --no-personal`: The credentials to be saved aim organizational accounts
 
-#### remove 
+#### remove
+
 Remove current credentials
 
 **Flags:**
-* ``-f | --force``: Force remove without asking
 
+-   `-f | --force`: Force remove without asking
 
-
-[//]: # ($)
+[//]: # '$'

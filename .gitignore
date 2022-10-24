@@ -1,5 +1,9 @@
-.gphauth/
+# Development Files
 data/
+ref/
+*.dev.*
+*.test.*
+
 # Logs
 logs
 *.log
