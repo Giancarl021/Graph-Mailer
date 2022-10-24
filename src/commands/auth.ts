@@ -28,7 +28,9 @@ const commands: Commands = {
             isDelegated
         };
 
-        const hasSecret = Boolean(await this.extensions.vault.getSecret(constants.auth.credentialsKey));
+        const hasSecret = Boolean(
+            await this.extensions.vault.getSecret(constants.auth.credentialsKey)
+        );
 
         if (!overwrite && hasSecret)
             throw new Error(
@@ -37,13 +39,18 @@ const commands: Commands = {
 
         const credentialsString = JSON.stringify(credentials);
 
-        await this.extensions.vault.setSecret(constants.auth.credentialsKey, credentialsString);
+        await this.extensions.vault.setSecret(
+            constants.auth.credentialsKey,
+            credentialsString
+        );
 
         return 'Credentials set, you will be prompted to login next time you run a authentication-only command';
     },
 
     async logout() {
-        const hasSecret = Boolean(await this.extensions.vault.getSecret(constants.auth.credentialsKey));
+        const hasSecret = Boolean(
+            await this.extensions.vault.getSecret(constants.auth.credentialsKey)
+        );
 
         if (!hasSecret) throw new Error('No credentials found');
 
