@@ -23,12 +23,17 @@
         "@giancarl021/cli-core": "^0.1.3",
         "@giancarl021/cli-core-vault-extension": "^0.1.4",
         "@giancarl021/locate": "^0.1.6",
+        "axios": "^1.1.3",
+        "dompurify": "^2.4.0",
         "graph-interface": "^1.0.1",
         "graph-interface-desktop-provider": "^1.0.1",
+        "markdown-splendor": "^1.0.1",
         "marked": "^4.1.1"
     },
     "devDependencies": {
         "@giancarl021/cli-core-docs-generator": "^0.1.0",
+        "@types/dompurify": "^2.3.4",
+        "@types/marked": "^4.0.7",
         "@types/node": "^18.11.4",
         "prettier": "^2.7.1",
         "ts-node": "^10.9.1",
