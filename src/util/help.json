@@ -1,3 +1,66 @@
 {
-    "$schema": "https://gist.githubusercontent.com/Giancarl021/127020c9cecb032beff587e308bec4ca/raw/af14cd087c7f3f2f1b1d6a6daec6f82699a44973/@giancarl021__cli-core__help-descriptor.schema.json"
+    "$schema": "https://gist.githubusercontent.com/Giancarl021/127020c9cecb032beff587e308bec4ca/raw/af14cd087c7f3f2f1b1d6a6daec6f82699a44973/@giancarl021__cli-core__help-descriptor.schema.json",
+    "auth": {
+        "description": "Manages authentication with Microsoft Graph API",
+        "subcommands": {
+            "login": {
+                "description": "Login with Microsoft Graph API",
+                "flags": {
+                    "client-id": {
+                        "aliases": ["c"],
+                        "description": "The App Registration Client ID",
+                        "optional": false,
+                        "values": ["<client-id>"]
+                    },
+                    "client-secret": {
+                        "aliases": ["s"],
+                        "description": "The App Registration Client Secret",
+                        "optional": false,
+                        "values": ["<client-secret>"]
+                    },
+                    "tenant-id": {
+                        "aliases": ["t"],
+                        "description": "The App Registration Tenant ID",
+                        "optional": false,
+                        "values": ["<tenant-id>"]
+                    },
+                    "force": {
+                        "aliases": ["f"],
+                        "description": "Overwrite credentials if already logged in"
+                    }
+                }
+            },
+            "logout": "Remove the current credentials"
+        }
+    },
+    "send": {
+        "args": ["email1[,email2[,...]]", "subject", "body|@path/to/file"],
+        "description": "Send an email of behalf of the logged in user",
+        "flags": {
+            "carbon-copy": {
+                "aliases": ["cc"],
+                "description": "Carbon copy recipients",
+                "values": ["email1[,email2[,...]"]
+            },
+            "blinded-carbon-copy": {
+                "aliases": ["bcc"],
+                "description": "Blinded carbon copy recipients",
+                "values": ["email1[,email2[,...]"]
+            },
+            "type": {
+                "aliases": ["t"],
+                "description": "The type of body of the email (if file have correct extension will be inferred)",
+                "values": ["text", "html", "markdown"]
+            },
+            "graph-version": {
+                "description": "The Graph API version used in the request",
+                "values": ["v1.0", "beta"]
+            },
+            "css": {
+                "aliases": ["style"],
+                "description": "The URL or path to a CSS file to be used with a Markdown body",
+                "values": ["url", "@path/to/file"]
+            }
+        }
+    }
 }
