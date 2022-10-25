@@ -9,14 +9,16 @@
         "lib/**/*"
     ],
     "bin": {
-        "gph": "lib/index.js"
+        "mailer": "lib/index.js"
     },
     "scripts": {
+        "ci": "yarn --frozen-lockfile",
         "format": "prettier -w --config .prettierrc --ignore-path .gitignore .",
         "generate-docs": "cli-core-docs-generator generate mailer src/util/help.json -o .github",
         "start": "node lib/index.js",
         "prestart": "yarn build",
         "build": "tsc",
+        "postbuild": "mkdir -p lib/src/css && cp src/css/* lib/src/css",
         "dev": "GRAPH_MAILER_DEBUG=true ts-node index.ts",
         "prepublishOnly": "yarn build"
     },

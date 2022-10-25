@@ -34,7 +34,7 @@ const command: Command = async function (args) {
 
     const _markdownStyles = this.helpers.valueOrDefault(
         this.helpers.getFlag('css', 'style'),
-        `@${locate('node_modules/markdown-splendor/css/splendor.min.css')}`
+        `@${locate('src/css/splendor.min.css')}`
     );
 
     let type = this.helpers.getFlag('type', 't') as string | null;
