@@ -13,10 +13,6 @@ const commands: Commands = {
         if (!clientSecret) throw new Error('No client secret provided');
         if (!tenantId) throw new Error('No tenant id provided');
 
-        const isDelegated =
-            this.helpers.hasFlag('delegated', 'd') ||
-            !this.helpers.hasFlag('no-delegated', 'no-d');
-
         const overwrite = this.helpers.hasFlag('force', 'f');
 
         const credentials: Credentials = {
@@ -25,7 +21,7 @@ const commands: Commands = {
                 clientSecret,
                 tenantId
             } as GraphCredentials,
-            isDelegated
+            isDelegated: true
         };
 
         const hasSecret = Boolean(

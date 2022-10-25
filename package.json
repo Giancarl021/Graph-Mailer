@@ -13,6 +13,7 @@
     },
     "scripts": {
         "format": "prettier -w --config .prettierrc --ignore-path .gitignore .",
+        "generate-docs": "cli-core-docs-generator generate mailer src/util/help.json -o .github",
         "start": "node lib/index.js",
         "prestart": "yarn build",
         "build": "tsc",
