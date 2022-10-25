@@ -1,3 +1,4 @@
+import AccountType from 'graph-interface-desktop-provider/lib/src/interfaces/options/account-type';
 import { Credentials } from '../interfaces';
 import { Credentials as GraphCredentials } from 'graph-interface/lib/interfaces';
 import { Commands } from '@giancarl021/cli-core/interfaces';
@@ -13,6 +14,22 @@ const commands: Commands = {
         if (!clientSecret) throw new Error('No client secret provided');
         if (!tenantId) throw new Error('No tenant id provided');
 
+        const _accountType = (
+            this.helpers.valueOrDefault(
+                this.helpers.getFlag('account-type', 'a'),
+                'both'
+            ) as string
+        ).toLowerCase();
+
+        if (!constants.accountTypes.includes(_accountType))
+            throw new Error(
+                `Invalid account type provided. Allowed types are: ${constants.accountTypes.join(
+                    ', '
+                )}`
+            );
+
+        const accountType = _accountType as AccountType;
+
         const overwrite = this.helpers.hasFlag('force', 'f');
 
         const credentials: Credentials = {
@@ -21,7 +38,7 @@ const commands: Commands = {
                 clientSecret,
                 tenantId
             } as GraphCredentials,
-            isDelegated: true
+            accountType
         };
 
         const hasSecret = Boolean(

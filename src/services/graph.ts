@@ -5,21 +5,20 @@ import { Credentials } from 'graph-interface/lib/interfaces';
 import { CommandInternal } from '@giancarl021/cli-core/interfaces';
 
 import vaultCache from './vaultCache';
+import AccountType from 'graph-interface-desktop-provider/lib/src/interfaces/options/account-type';
 
 export default function (
     commandInternal: CommandInternal,
     credentials: Credentials,
-    isDelegated: boolean,
+    accountType: AccountType,
     version?: string
 ) {
     const graph = GraphInterface(credentials, {
-        authenticationProvider: isDelegated
-            ? GraphInterfaceDesktopProvider({})
-            : undefined,
+        authenticationProvider: GraphInterfaceDesktopProvider({ accountType }),
         version,
         cacheService: vaultCache(commandInternal, {
             auth: credentials,
-            isDelegated
+            accountType
         })
     });
 

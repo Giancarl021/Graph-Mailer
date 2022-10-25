@@ -24,6 +24,12 @@
                         "optional": false,
                         "values": ["<tenant-id>"]
                     },
+                    "account-type": {
+                        "aliases": ["a"],
+                        "description": "The account type of the user. Default 'both'",
+                        "optional": true,
+                        "values": ["personal", "corporate", "both"]
+                    },
                     "force": {
                         "aliases": ["f"],
                         "description": "Overwrite credentials if already logged in"

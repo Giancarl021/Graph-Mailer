@@ -79,12 +79,18 @@ const command: Command = async function (args) {
         markdownStyles = await readFile(path, 'utf8');
     } else {
         try {
-            const { data } = await axios.get(_markdownStyles, { responseType: 'text' });
+            const { data } = await axios.get(_markdownStyles, {
+                responseType: 'text'
+            });
             markdownStyles = data;
         } catch (_err) {
             const err = _err as AxiosError;
 
-            throw new Error(`Failed to fetch CSS file: ${err.message} - ${err.code} ${err.response?.data ?? 'No body'}`);
+            throw new Error(
+                `Failed to fetch CSS file: ${err.message} - ${err.code} ${
+                    err.response?.data ?? 'No body'
+                }`
+            );
         }
     }
 
@@ -99,7 +105,7 @@ const command: Command = async function (args) {
     const graph = Graph(
         this,
         credentials.auth,
-        credentials.isDelegated,
+        credentials.accountType,
         graphVersion
     );
 
