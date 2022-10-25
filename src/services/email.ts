@@ -1,9 +1,13 @@
 import { BodyType, EmailOptions } from '../interfaces';
 
 import { marked } from 'marked';
-import * as DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 
 type RestrictedBodyType = Exclude<BodyType, 'markdown'>;
+
+const window = new JSDOM('').window as unknown as Window;
+const purify = DOMPurify(window);
 
 function toRecipient(to: string) {
     return {
@@ -19,10 +23,14 @@ function parseBody(body: string, type: BodyType, styles: string) {
 
     switch (type) {
         case 'markdown':
-            content = DOMPurify.sanitize(
-                `<style>${styles}</style>${marked(body)}`
+            content = purify.sanitize(
+                `<style>${styles}</style>${marked(body)}`,
+                {
+                    FORCE_BODY: true
+                }
             );
             contentType = 'html';
+            break;
         case 'html':
         case 'text':
             contentType = type as RestrictedBodyType;
@@ -40,16 +48,18 @@ function parseBody(body: string, type: BodyType, styles: string) {
 }
 
 export default async function (options: EmailOptions) {
-    await options.graph.unit('me/sendMail', {
-        method: 'POST',
-        body: {
-            message: {
-                subject: options.subject
-            },
+    const body = {
+        message: {
+            subject: options.subject,
             body: parseBody(options.body, options.type, options.markdownStyles),
             toRecipients: options.to.map(toRecipient),
             ccRecipients: options.cc.map(toRecipient),
             bccRecipients: options.bcc.map(toRecipient)
         }
+    };
+
+    await options.graph.unit('me/sendMail', {
+        method: 'POST',
+        body
     });
 }

@@ -28,12 +28,14 @@
         "dompurify": "^2.4.0",
         "graph-interface": "^1.0.1",
         "graph-interface-desktop-provider": "^1.0.1",
+        "jsdom": "^20.0.1",
         "markdown-splendor": "^1.0.1",
         "marked": "^4.1.1"
     },
     "devDependencies": {
         "@giancarl021/cli-core-docs-generator": "^0.1.0",
         "@types/dompurify": "^2.3.4",
+        "@types/jsdom": "^20.0.0",
         "@types/marked": "^4.0.7",
         "@types/node": "^18.11.4",
         "prettier": "^2.7.1",

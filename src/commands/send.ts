@@ -94,8 +94,9 @@ const command: Command = async function (args) {
         }
     }
 
-    const credentials: Credentials | null =
-        await this.extensions.vault.getSecret(constants.auth.credentialsKey);
+    const credentials: Credentials | null = JSON.parse(
+        await this.extensions.vault.getSecret(constants.auth.credentialsKey)
+    );
 
     if (!credentials)
         throw new Error(

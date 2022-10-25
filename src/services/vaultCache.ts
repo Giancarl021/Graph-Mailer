@@ -17,7 +17,7 @@ export default function (
     credentials: Credentials
 ): CacheService {
     const credentialsHash = hash(
-        `${credentials.auth.clientId}-${credentials.auth.clientSecret}-${credentials.auth.tenantId}::${credentials.isDelegated}`
+        `${credentials.auth.clientId}-${credentials.auth.clientSecret}-${credentials.auth.tenantId}::${credentials.accountType}`
     );
 
     const cacheData: ExpirationsString | null =

@@ -7,6 +7,3 @@ Remove the current credentials
 ```bash
 mailer auth logout
 ```
-
-
-
