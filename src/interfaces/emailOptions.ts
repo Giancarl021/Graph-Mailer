@@ -3,6 +3,7 @@ import GraphInterfaceInstance from './graphInstance';
 
 interface EmailOptions {
     graph: GraphInterfaceInstance;
+    originalBodyPath: string;
     subject: string;
     body: string;
     type: BodyType;

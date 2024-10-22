@@ -32,9 +32,9 @@ const command: Command = async function (args) {
         'v1.0'
     );
 
-    const _markdownStyles = this.helpers.valueOrDefault(
+    let _markdownStyles = this.helpers.valueOrDefault(
         this.helpers.getFlag('css', 'style'),
-        `@${locate('src/css/splendor.min.css')}`
+        'github'
     );
 
     let type = this.helpers.getFlag('type', 't') as string | null;
@@ -52,6 +52,7 @@ const command: Command = async function (args) {
 
     let body: string;
     let markdownStyles: string;
+    let bodyPath: string;
 
     if (_body.startsWith('@')) {
         const path = locate(_body.slice(1), true);
@@ -59,6 +60,7 @@ const command: Command = async function (args) {
         if (!exists(path)) throw new Error(`Body file not found: ${path}`);
 
         body = await readFile(path, 'utf8');
+        bodyPath = path;
 
         if (!type) {
             const ext = path.split('.').pop();
@@ -69,9 +71,18 @@ const command: Command = async function (args) {
                 type = extension;
             else type = 'text';
         }
-    } else body = _body;
+    } else {
+        body = _body;
+        bodyPath = locate('.', true);
+    }
 
-    if (_markdownStyles.startsWith('@')) {
+    if (['splendor', 'github'].includes(_markdownStyles)) {
+        const path = locate(`src/css/${_markdownStyles}/styles.css`);
+
+        if (!exists(path)) throw new Error(`Internal CSS file not found: ${path}`);
+
+        markdownStyles = await readFile(path, 'utf8');
+    } else if (_markdownStyles.startsWith('@')) {
         const path = locate(_markdownStyles.slice(1), true);
 
         if (!exists(path)) throw new Error(`CSS file not found: ${path}`);
@@ -112,6 +123,7 @@ const command: Command = async function (args) {
 
     await sendEmail({
         graph,
+        originalBodyPath: bodyPath,
         bcc,
         subject,
         body,
