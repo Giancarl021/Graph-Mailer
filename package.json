@@ -42,7 +42,6 @@
         "@giancarl021/cli-core-docs-generator": "^0.1.2",
         "@types/dompurify": "^3.0.5",
         "@types/jsdom": "^21.1.7",
-        "@types/marked": "^6.0.0",
         "@types/mime-types": "^2.1.4",
         "@types/node": "^22.7.8",
         "cross-env": "^7.0.3",
